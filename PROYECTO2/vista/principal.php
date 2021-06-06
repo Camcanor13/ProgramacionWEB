@@ -14,6 +14,7 @@
 <li><a href="principal.php"><i class="icon-home"></i>Inicio</a></li>
 <li><a href="ListaClase.html"><i class="icon-List"></i>Clases Disponibles</a></li>
 <li><a href="contactenos.html"><i class="icon-thumbs-up-alt"></i>Contactenos</a></li>
+
 </ul>
 </nav>
 </header>
@@ -53,7 +54,7 @@
     Diseñado por: Kennyn Aullon, Diego Quintero y David Cano<BR>
     Email:kennyn.aullon00@usc.edu.co<BR>
     diego.quintero04@usc.edu.co<BR>
-    camcanor13@gmail.com<BR>
+    carlos.cano01@usc.edu.co<BR>
 
 </footer>-->
 <!--TERMINA PIE DE PAGINA-->

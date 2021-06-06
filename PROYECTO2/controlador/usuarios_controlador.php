@@ -6,4 +6,4 @@
 	$matrizusuarios=$usuario->get_usuarios();
 
 	include("../vista/comprueba_login.php");
- ?>
+ ?>s

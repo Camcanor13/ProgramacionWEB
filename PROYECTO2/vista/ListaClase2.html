@@ -1,78 +1,127 @@
-<!DOCTYPE html>
 <html>
-<img src="img//banner.png">
 
-<header>
-<section>
+    <header>
+        <section>
+        <label for="toggle-1" class="toggle-menu"></label>
+        <input type="checkbox" id="toggle-1">
+        <link rel="stylesheet" href="css/estilo.css">
+        <nav>
+        <ul>
+            <li><a href="principal2.php"><i class="icon-home"></i>Inicio</a></li>
+			<li><a href="crearclase.html"><i class="icon-user"></i>Crear Clase</a></li>
+			<li><a href="ListaClase2.html"><i class="icon-List"></i>Clases Disponibles</a></li>
+			<li><a href="contactenos2.html"><i class="icon-thumbs-up-alt"></i>Contactenos</a></li>
+			
+
+        </ul>
+        </nav>
+        </header>
+        </section> 
+ <body>   
+
+ <form id="AsistenciaForm">
+	 <div id="Nombre_estudiante">
+	<p>
+		<label for="estudiante">Nombre Completo
+		  <span class="obligatorio">*</span>
+		</label>
+		  <input type="text" name="estudiante" id="estudiante" required="obligatorio" placeholder="Nombre y Apellidos">
+	  </p>
+	</div>  
+	<div id="Tipo_documento">
+	  <p>
+		<label for="Documento" >Documento de Identificacion
+		  <span class="obligatorio">*</span>
+		</label>
+		  <select name="Documento">
+		<option value="0">-Documento -</option>
+		<option value="CC">Cedula</option>
+		<option value="TI">Tarjeta de Identidad</option>
+	</select>
+	  </p>
+	</div>  
+	
+	<div id="Numero_documento">
+	  <p>
+		<label for="cedula" >Numero de Identificacion 
+		  <span class="obligatorio">*</span>
+		</label>
+		  <input type="text" name="cedula" id="cedula" required="obligatorio" placeholder="Cedula o Ti del estudiante">
+	  </p>
+	</div>
+	<button type="submit" name="enviar_formulario" id="Agregar" onclick=""><p>Agregar Asistencia(Cupos Disponibles: ###)</p></button>
+    <!--<button type="asdasd" name="enviar_formulario" id="Eliminar" onclick=""><p>Eliminar Asistencia</p></button> -->
+ </form>
+
+ 
 
 
 
-<label for="toggle-1" class="toggle-menu"></label>
-<input type="checkbox" id="toggle-1">
-<link rel="stylesheet" href="css/estilo.css">
-<nav>
-<ul>
-<li><a href="principal2.php"><i class="icon-home"></i>Inicio</a></li>
-<li><a href="crearclase.html"><i class="icon-user"></i>Crear Clase</a></li>
-<li><a href="ListaClase2.html"><i class="icon-List"></i>Clases Disponibles</a></li>
-<li><a href="contactenos2.html"><i class="icon-thumbs-up-alt"></i>Contactenos</a></li>
-</ul>
-</nav>
-</header>
 
-</section> 
+ <div class="formulario"></div>
+ <h1>Codigo Clase: AQ540</h1> 
+ <p>Asignatura: Programacion Orientada a a la web</p>
+ <p>Profesor: Diego Loaiza</p>
+ <p>Salon de Clase: 2410</p>
+ <p>Fecha de la Clase 27/02/2021</p>
+ <p>Hora de la clase: 1:00 PM</p>
+ <p>Cantidad de Estudiantes Maximos a asistir: 15</p>
 
 
 
-<body>   
-    <!-- Formulario de creación de clases en html y css -->
-    <div class="contact_form">
-        <div class="formulario"></div>
-        <h1>Codigo Clase: ###</h1> 
-        <p>Asignatura: Programación Orientada a a la web</p>
-        <p>Profesor: Diego Loaiza</p>
-        <p>Salon de Clase: 2410</p>
-        <p>Fecha de la ClaseÑ 27/02/2021</p>
-        <p>Hora de la clase: 1:00 PM</p>
-        <p>Cantidad de Estudiantes Maximos a asistir: 15</p>
+	<table id="tablaEstudiante" style="width: 100%;">
+      
+		<tr>
+			<th colspan="2">
+				ASISTENCIA
+			</th>
+		</tr>
+		<tr>
+			<td>Nombre Estudiante</td>
+			<td>Tipo de Documento</td>
+			<td>Numero de Documento</td>
+		</tr>
+		<tr>
+			<td>Carlos David Cano</td>
+			<td>CEDULA</td>
+			<td>1214748489</td>
+		</tr>
+		<!-- <tr> 
+			<td>Kennyn Aullon</td>
+			<td>CEDULA</td>
+			<td>121312312312</td>
+		</tr>
+		<tr>
+			<td>Diego Quintero</td>
+			<td>Tarjeta de Identidad</td>
+			<td>3232232322</td>
+		</tr> -->
 
-        
+	</table>		 
+ </div>
 
-            <table style="width: 100%;">
+ <script>
+	const form = document.getElementById("AsistenciaForm");
+	form.addEventListener("submit", function(event){
+		event.preventDefault();
+		let AsistenciaFormData = new FormData(form);
 
-                <tr>
-                    <th colspan="2">
-                        ASISTENCIA
-                    </th>
-                </tr>
-                <tr>
-                    <td>NOMBRE ESTUDIANTE</td>
-                    <td>CEDULA</td>
-                </tr>
-                <tr>
-                    <td>NOMBRE ESTUDIANTE</td>
-                    <td>CEDULA</td>
-                </tr>
-                <tr>
-                    <td>NOMBRE ESTUDIANTE</td>
-                    <td>CEDULA</td>
-                </tr>
+		let tablaEstudianteRef = document.getElementById("tablaEstudiante");	
 
-            </table>
+		let newTablaEstudianteRowRef = tablaEstudianteRef.insertRow(-1);
 
-                 
-    </div>
-    </div>  
-</body> 
+		let newTypeCellRef = newTablaEstudianteRowRef.insertCell(0);
+		newTypeCellRef.textContent = AsistenciaFormData.get("estudiante")
 
- <!--PIE DE PAGINA-->
-  <footer>
-AULA VIRTUAL<br>
-    Diseñado por: Kennyn Aullon, Diego Quintero y David Cano<BR>
-    Email:kennyn.aullon00@usc.edu.co<BR>
-    diego.quintero04@usc.edu.co<BR>
-    camcanor13@gmail.com<BR>
+		newTypeCellRef = newTablaEstudianteRowRef.insertCell(1);
+		newTypeCellRef.textContent = AsistenciaFormData.get("Documento")
 
-</footer>-->
-<!--TERMINA PIE DE PAGINA-->
+		newTypeCellRef = newTablaEstudianteRowRef.insertCell(2);
+		newTypeCellRef.textContent = AsistenciaFormData.get("cedula")
+		
+	}
+	)
+ </script>		
+
+ </body>
 </html>
